@@ -1,0 +1,157 @@
+.sidebar {
+    width: 260px;
+    min-height: calc(100vh - 60px);
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    position: relative;
+    flex-shrink: 0;
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 40px;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: #1976d2;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.sidebar.collapsed .sidebar-toggle {
+    right: 0;
+    left: 0;
+}
+
+.sidebar-toggle:hover {
+    background: #1565c0;
+}
+
+.sidebar-content {
+    padding: 50px 16px 16px;
+}
+
+.sidebar-header {
+    margin-bottom: 16px;
+}
+
+.sidebar-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.sidebar-progress {
+    margin-bottom: 4px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #1976d2;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #666;
+}
+
+.sidebar-search {
+    margin-bottom: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #1976d2;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.exams-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    padding: 8px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.exams-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exam-item {
+    margin-bottom: 2px;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.exam-item:hover {
+    background: #f5f5f5;
+}
+
+.exam-item.active {
+    background: #e3f2fd;
+}
+
+.exam-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+}
+
+.exam-status {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.exam-name {
+    font-size: 13px;
+    line-height: 1.3;
+}

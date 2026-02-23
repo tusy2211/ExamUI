@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+  <rect width="220" height="220" fill="white"/>
+  <!-- Circle with center O(100, 100) and radius 80 -->
+  <circle cx="100" cy="100" r="80" stroke="#333" stroke-width="1.5" fill="none"/>
+  <!-- Square OABC. O(100, 100), A(180, 100), B(180, 180), C(100, 180) -->
+  <rect x="100" y="100" width="80" height="80" stroke="#333" stroke-width="1.5" fill="none"/>
+  <!-- Points -->
+  <circle cx="100" cy="100" r="3" fill="#F57C00"/> <!-- O -->
+  <circle cx="180" cy="100" r="3" fill="#F57C00"/> <!-- A -->
+  <circle cx="180" cy="180" r="3" fill="#F57C00"/> <!-- B -->
+  <circle cx="100" cy="180" r="3" fill="#F57C00"/> <!-- C -->
+  <!-- Labels -->
+  <text x="85" y="105" font-size="18" font-family="Arial, sans-serif" fill="#222">O</text>
+  <text x="185" y="105" font-size="18" font-family="Arial, sans-serif" fill="#222">A</text>
+  <text x="185" y="200" font-size="18" font-family="Arial, sans-serif" fill="#222">B</text>
+  <text x="85" y="200" font-size="18" font-family="Arial, sans-serif" fill="#222">C</text>
+</svg>

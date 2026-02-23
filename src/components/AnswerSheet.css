@@ -1,0 +1,141 @@
+.answer-sheet {
+    width: 280px;
+    background: #fff;
+    border-left: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    position: sticky;
+    top: 60px;
+    flex-shrink: 0;
+}
+
+.answer-sheet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.answered-count {
+    font-size: 13px;
+    color: #555;
+}
+
+.timer {
+    font-size: 14px;
+    font-weight: 600;
+    color: #d32f2f;
+    font-family: 'Courier New', monospace;
+}
+
+.answer-grid {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 12px;
+}
+
+.answer-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 4px;
+    padding: 2px 0;
+}
+
+.question-num {
+    width: 28px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+.answer-option {
+    width: 32px;
+    height: 28px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    border-radius: 2px;
+}
+
+.answer-option:hover {
+    border-color: #1976d2;
+    color: #1976d2;
+}
+
+.answer-option.selected {
+    background: #1976d2;
+    border-color: #1976d2;
+    color: #fff;
+}
+
+.answer-sheet-footer {
+    padding: 12px;
+    border-top: 1px solid #eee;
+}
+
+.section-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.section-btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #555;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.section-btn.active {
+    background: #1976d2;
+    border-color: #1976d2;
+    color: #fff;
+}
+
+.section-btn:hover:not(.active) {
+    border-color: #1976d2;
+    color: #1976d2;
+}
+
+.section-arrow {
+    font-size: 14px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.submit-btn:hover {
+    background: #1976d2;
+    border-color: #1976d2;
+    color: #fff;
+}
