@@ -704,7 +704,7 @@ export const examSets = [
               },
               {
                 id: 5,
-                content: 'Mark the letter A, B, C or D to indicate the underlined part that needs correction.\n5. When I was small, I usually play chess with my father.',
+                content: 'Mark the letter A, B, C or D to indicate the underlined part that needs correction.\n5. <u>When</u> I <u>was</u> small, I usually <u>play chess</u> <u>with</u> my father.',
                 options: [
                   { key: 'A', value: 'When' },
                   { key: 'B', value: 'was' },
@@ -715,7 +715,7 @@ export const examSets = [
               },
               {
                 id: 6,
-                content: 'Mark the letter A, B, C or D to indicate the underlined part that needs correction.\n6. My parents always give a lot of present to me on my birthday.',
+                content: 'Mark the letter A, B, C or D to indicate the underlined part that needs correction.\n6. My parents always <u>give</u> a lot of <u>present</u> to me <u>on</u> <u>my</u> birthday.',
                 options: [
                   { key: 'A', value: 'give' },
                   { key: 'B', value: 'present' },
@@ -726,7 +726,7 @@ export const examSets = [
               },
               {
                 id: 7,
-                content: 'Mark the letter A, B, C or D to indicate the underlined part that needs correction.\n7. Tam is good at sports, and he can play football very good.',
+                content: 'Mark the letter A, B, C or D to indicate the underlined part that needs correction.\n7. Tam is good <u>at</u> sports, and he <u>can</u> <u>play</u> football very <u>good</u>.',
                 options: [
                   { key: 'A', value: 'at' },
                   { key: 'B', value: 'can' },
