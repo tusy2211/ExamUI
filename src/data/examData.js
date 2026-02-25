@@ -660,23 +660,23 @@ export const examSets = [
             questions: [
               {
                 id: 1,
-                content: 'Mark the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation.\n1. A. lazy  B. car  C. hate  D. date',
+                content: 'Mark the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation.\n1. A. l<u>a</u>zy  B. c<u>a</u>r  C. h<u>a</u>te  D. d<u>a</u>te',
                 options: [
-                  { key: 'A', value: 'lazy' },
-                  { key: 'B', value: 'car' },
-                  { key: 'C', value: 'hate' },
-                  { key: 'D', value: 'date' },
+                  { key: 'A', value: 'l<u>a</u>zy' },
+                  { key: 'B', value: 'c<u>a</u>r' },
+                  { key: 'C', value: 'h<u>a</u>te' },
+                  { key: 'D', value: 'd<u>a</u>te' },
                 ],
                 correctAnswer: 'B',
               },
               {
                 id: 2,
-                content: 'Mark the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation.\n2. A. biscuit  B. camera  C. ocean  D. clever',
+                content: 'Mark the letter A, B, C or D to indicate the word whose underlined part differs from the other three in pronunciation.\n2. A. bis<u>c</u>uit  B. <u>c</u>amera  C. o<u>c</u>ean  D. <u>c</u>lever',
                 options: [
-                  { key: 'A', value: 'biscuit' },
-                  { key: 'B', value: 'camera' },
-                  { key: 'C', value: 'ocean' },
-                  { key: 'D', value: 'clever' },
+                  { key: 'A', value: 'bis<u>c</u>uit' },
+                  { key: 'B', value: '<u>c</u>amera' },
+                  { key: 'C', value: 'o<u>c</u>ean' },
+                  { key: 'D', value: '<u>c</u>lever' },
                 ],
                 correctAnswer: 'C',
               },

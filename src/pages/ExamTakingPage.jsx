@@ -98,7 +98,11 @@ const ExamTakingPage = () => {
                                         {question.content.split('\n').map((line, i) => (
                                             <React.Fragment key={i}>
                                                 {i > 0 && <br />}
-                                                {i === 0 ? line : <span className="question-indent">{line}</span>}
+                                                {i === 0 ? (
+                                                    <span dangerouslySetInnerHTML={{ __html: line }} />
+                                                ) : (
+                                                    <span className="question-indent" dangerouslySetInnerHTML={{ __html: line }} />
+                                                )}
                                             </React.Fragment>
                                         ))}
                                     </div>
@@ -120,7 +124,7 @@ const ExamTakingPage = () => {
                                                 onClick={() => handleAnswerSelect(question.id, opt.key)}
                                             >
                                                 <span className="option-key">{opt.key}</span>
-                                                <span className="option-value">{opt.value}</span>
+                                                <span className="option-value" dangerouslySetInnerHTML={{ __html: opt.value }} />
                                             </label>
                                         ))}
                                     </div>
