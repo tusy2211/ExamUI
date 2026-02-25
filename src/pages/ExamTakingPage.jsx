@@ -43,7 +43,7 @@ const ExamTakingPage = () => {
         }, 1000);
 
         return () => clearInterval(timerRef.current);
-    }, [exam, submitted]);
+    }, [data.exam, submitted]);
 
     if (loading) {
         return <div className="loading-screen">Đang tải bài thi...</div>;

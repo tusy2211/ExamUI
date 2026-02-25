@@ -13,7 +13,7 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error('Failed to fetch exam data');
         }
-        cachedData = await response.ok ? await response.json() : null;
+        cachedData = await response.json();
         return cachedData;
     } catch (error) {
         console.error('Error loading exam data:', error);
