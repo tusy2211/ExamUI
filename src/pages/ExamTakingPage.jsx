@@ -144,6 +144,7 @@ const ExamTakingPage = () => {
                 onSubmit={handleSubmit}
                 timeLeft={timeLeft}
                 totalQuestions={totalQuestions}
+                submitted={submitted}
             />
         </div>
     );

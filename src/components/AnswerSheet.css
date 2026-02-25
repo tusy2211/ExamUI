@@ -79,6 +79,23 @@
     color: #fff;
 }
 
+.answer-option.correct {
+    background: #4caf50 !important;
+    border-color: #4caf50 !important;
+    color: #fff !important;
+}
+
+.answer-option.incorrect {
+    background: #f44336 !important;
+    border-color: #f44336 !important;
+    color: #fff !important;
+}
+
+.answer-option:disabled,
+.answer-option[style*="pointer-events: none"] {
+    cursor: default;
+}
+
 .answer-sheet-footer {
     padding: 12px;
     border-top: 1px solid #eee;

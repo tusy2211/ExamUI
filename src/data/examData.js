@@ -869,7 +869,7 @@ export const examSets = [
               },
               {
                 id: 20,
-                content: 'Mark the letter A, B, C or D to indicate the word(s) CLOSEST in meaning to the underlined word(s).\n20. Today, young people are fond of wearing jeans.',
+                content: 'Mark the letter A, B, C or D to indicate the word(s) CLOSEST in meaning to the underlined word(s).\n20. Today, young people are <strong><u>fond of</u></strong> wearing jeans.',
                 options: [
                   { key: 'A', value: 'like' },
                   { key: 'B', value: 'hate' },
@@ -880,7 +880,7 @@ export const examSets = [
               },
               {
                 id: 21,
-                content: 'Mark the letter A, B, C or D to indicate the word(s) CLOSEST in meaning to the underlined word(s).\n21. Ha Long Bay is well-known for its beauty. Many tourists visit the place every year.',
+                content: 'Mark the letter A, B, C or D to indicate the word(s) CLOSEST in meaning to the underlined word(s).\n21. Ha Long Bay is <strong><u>well-known</u></strong> for its beauty. Many tourists visit the place every year.',
                 options: [
                   { key: 'A', value: 'perfect' },
                   { key: 'B', value: 'famous' },

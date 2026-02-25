@@ -11,6 +11,7 @@ const AnswerSheet = ({
     onSubmit,
     timeLeft,
     totalQuestions,
+    submitted,
 }) => {
     const answeredCount = Object.keys(answers).length;
 
@@ -44,15 +45,22 @@ const AnswerSheet = ({
                     return (
                         <div key={q.id} className="answer-row">
                             <span className="question-num">{questionNum}</span>
-                            {['A', 'B', 'C', 'D'].map((opt) => (
-                                <button
-                                    key={opt}
-                                    className={`answer-option ${answers[q.id] === opt ? 'selected' : ''}`}
-                                    onClick={() => onAnswerSelect(q.id, opt)}
-                                >
-                                    {opt}
-                                </button>
-                            ))}
+                            {['A', 'B', 'C', 'D'].map((opt) => {
+                                const isSelected = answers[q.id] === opt;
+                                const isCorrect = q.correctAnswer === opt;
+                                const className = `answer-option ${isSelected ? 'selected' : ''} ${submitted && isCorrect ? 'correct' : ''
+                                    } ${submitted && isSelected && !isCorrect ? 'incorrect' : ''}`;
+
+                                return (
+                                    <button
+                                        key={opt}
+                                        className={className}
+                                        onClick={() => !submitted && onAnswerSelect(q.id, opt)}
+                                    >
+                                        {opt}
+                                    </button>
+                                );
+                            })}
                         </div>
                     );
                 })}
