@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { examSets } from '../data/examData';
+import { getExamSets } from '../data/api';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
+    const [examSets, setExamSets] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchSets = async () => {
+            const data = await getExamSets();
+            setExamSets(data);
+            setLoading(false);
+        };
+        fetchSets();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="profile-page">
+                <div className="profile-header">
+                    <h1 className="profile-title">Đang tải...</h1>
+                </div>
+            </div>
+        );
+    }
     return (
         <div className="profile-page">
             <div className="profile-header">

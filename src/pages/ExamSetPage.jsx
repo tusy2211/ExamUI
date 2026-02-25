@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
-import { getExamSet } from '../data/examData';
+import { getExamSet } from '../data/api';
 import './ExamSetPage.css';
 
 const ExamSetPage = () => {
     const { setId } = useParams();
-    const examSet = getExamSet(setId);
+    const [examSet, setExamSet] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchSet = async () => {
+            const data = await getExamSet(setId);
+            setExamSet(data);
+            setLoading(false);
+        };
+        fetchSet();
+    }, [setId]);
+
+    if (loading) {
+        return <div className="loading-screen">Đang tải bộ đề...</div>;
+    }
 
     if (!examSet) {
         return <div className="not-found">Không tìm thấy bộ đề</div>;

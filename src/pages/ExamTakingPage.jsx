@@ -2,23 +2,34 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import AnswerSheet from '../components/AnswerSheet';
-import { getExamSet, getExam, getTotalQuestions } from '../data/examData';
+import { getExamSet, getExam, getTotalQuestions } from '../data/api';
 import './ExamTakingPage.css';
 
 const ExamTakingPage = () => {
     const { setId, examId } = useParams();
     const navigate = useNavigate();
-    const examSet = getExamSet(setId);
-    const exam = getExam(setId, examId);
+    const [data, setData] = useState({ examSet: null, exam: null });
+    const [loading, setLoading] = useState(true);
 
     const [answers, setAnswers] = useState({});
     const [currentSection, setCurrentSection] = useState(0);
-    const [timeLeft, setTimeLeft] = useState(exam ? exam.duration * 60 : 0);
+    const [timeLeft, setTimeLeft] = useState(0);
     const [submitted, setSubmitted] = useState(false);
     const timerRef = useRef(null);
 
     useEffect(() => {
-        if (!exam || submitted) return;
+        const fetchData = async () => {
+            const set = await getExamSet(setId);
+            const ex = await getExam(setId, examId);
+            setData({ examSet: set, exam: ex });
+            if (ex) setTimeLeft(ex.duration * 60);
+            setLoading(false);
+        };
+        fetchData();
+    }, [setId, examId]);
+
+    useEffect(() => {
+        if (!data.exam || submitted || loading) return;
 
         timerRef.current = setInterval(() => {
             setTimeLeft((prev) => {
@@ -33,6 +44,12 @@ const ExamTakingPage = () => {
 
         return () => clearInterval(timerRef.current);
     }, [exam, submitted]);
+
+    if (loading) {
+        return <div className="loading-screen">Đang tải bài thi...</div>;
+    }
+
+    const { examSet, exam } = data;
 
     if (!examSet || !exam) {
         return <div className="not-found">Không tìm thấy đề thi</div>;
