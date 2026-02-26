@@ -1,4 +1,10 @@
 # Logs
+vite.config.js.timestamp-*
+
+# Env
+.env
+.env.local
+.env.*.local
 logs
 *.log
 npm-debug.log*

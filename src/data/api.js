@@ -1,34 +1,43 @@
 /**
- * API layer to fetch exam data from the JSON file.
- * This helps reduce the initial bundle size by loading data on-demand.
+ * API layer to fetch exam data from Supabase.
+ * Data is cached in memory after the first fetch.
  */
+import { supabase } from './supabaseClient';
 
-let cachedData = null;
+let cachedExamSets = null;
 
-async function fetchData() {
-    if (cachedData) return cachedData;
+async function fetchExamSets() {
+    if (cachedExamSets) return cachedExamSets;
 
     try {
-        const response = await fetch('/exam-data.json');
-        if (!response.ok) {
-            throw new Error('Failed to fetch exam data');
-        }
-        cachedData = await response.json();
-        return cachedData;
+        const { data, error } = await supabase
+            .from('exam_sets')
+            .select('*');
+
+        if (error) throw error;
+
+        // Extract the full exam set objects from the 'data' JSONB column
+        cachedExamSets = data.map((row) => row.data);
+        return cachedExamSets;
     } catch (error) {
-        console.error('Error loading exam data:', error);
-        return { userProfile: { name: 'Học sinh', avatar: null }, examSets: [] };
+        console.error('Error loading exam data from Supabase:', error);
+        // Fallback: try local JSON file
+        try {
+            const response = await fetch('/exam-data.json');
+            if (response.ok) {
+                const json = await response.json();
+                cachedExamSets = json.examSets;
+                return cachedExamSets;
+            }
+        } catch (fallbackError) {
+            console.error('Fallback also failed:', fallbackError);
+        }
+        return [];
     }
 }
 
-export const getUserProfile = async () => {
-    const data = await fetchData();
-    return data.userProfile;
-};
-
 export const getExamSets = async () => {
-    const data = await fetchData();
-    return data.examSets;
+    return await fetchExamSets();
 };
 
 export const getExamSet = async (id) => {
