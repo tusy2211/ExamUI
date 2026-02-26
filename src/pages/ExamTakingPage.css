@@ -7,19 +7,22 @@
 .exam-taking-main {
     flex: 1;
     overflow-y: auto;
-    height: calc(100vh - 60px);
+    /* Removed height: calc(100vh - 60px) to allow natural scrolling if needed */
     padding: 24px;
-    display: flex;
-    justify-content: center;
+    /* Use block display and margin auto for centering instead of flex */
 }
 
 .exam-taking-content {
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
+    /* Centering */
     background: var(--bg-surface);
     padding: 40px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
+    min-height: min-content;
+    /* Ensure it grows */
 }
 
 .exam-taking-title {
