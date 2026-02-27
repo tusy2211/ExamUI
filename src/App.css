@@ -42,3 +42,62 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #aaa;
 }
+
+/* Protected Route Styles */
+.protected-message-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: #fafafa;
+  min-height: calc(100vh - 60px);
+}
+
+.protected-message-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 450px;
+  text-align: center;
+  border: 1px solid #eee;
+}
+
+.lock-icon {
+  margin-bottom: 24px;
+  background: #e3f2fd;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.protected-message-card h2 {
+  font-size: 24px;
+  color: #1a237e;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.protected-message-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.auth-btn.login-large {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #1976d2;
+  color: white;
+}
+
+.auth-btn.login-large:hover {
+  background: #1565c0;
+}
